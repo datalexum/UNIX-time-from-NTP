@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 from io import open
 from os import path
 import pathlib
+
 HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 with open(path.join(HERE, 'requirements.txt'), encoding='utf-8') as f:
@@ -14,7 +15,7 @@ dependency_links = [x.strip().replace('git+', '') for x in all_reqs \
 setup (
     name = 'UtfN',
     description = 'UNIX time from NTP or short UtfN is a simple CLI tool to set the time from an NTP-Server.',
-    version = '1.0.0',
+    version = '1.0.1',
     packages = find_packages(),
     install_requires = install_requires,
     python_requires='>=3',
@@ -28,7 +29,7 @@ setup (
     long_description_content_type="text/markdown",
     license='MIT',
     url='https://github.com/datalexum/UNIX-time-from-NTP/',
-    download_url='https://codeload.github.com/datalexum/UNIX-time-from-NTP/tar.gz/refs/tags/1.0.0',
+    download_url='https://codeload.github.com/datalexum/UNIX-time-from-NTP/tar.gz/refs/tags/1.0.1',
     dependency_links = dependency_links,
                         author_email='alexander.schroeder-t59@rub.de',
                         classifiers=[
