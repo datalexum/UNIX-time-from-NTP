@@ -3,31 +3,11 @@ import subprocess
 
 from ntplib import NTPClient
 from datetime import datetime, timezone, timedelta
-from argparse import ArgumentParser
 from socket import gaierror
 
 
-def parse_arguments():
-    parser = ArgumentParser(description='Sets the time and date of a unix system from a specified NTP-Server.')
-
-    parser.add_argument('-s',
-                        '--server',
-                        action='store',
-                        type=str,
-                        default='pool.ntp.org',
-                        help='NTP-Server')
-    
-    parser.add_argument('-z',
-                        '--timezone',
-                        action='store',
-                        type=int,
-                        default=0,
-                        help='Hours from UTC')
-    
-    return vars(parser.parse_args())
-
-def main():
-    arguments = parse_arguments()
+def time_from_ntp(arguments):
+    arguments
     ntp_client = NTPClient()
     try:
         response = ntp_client.request(arguments['server'], version = 3)
@@ -45,7 +25,3 @@ def main():
         print("Connection Error: No internet connection or connection to NTP-Server not possible!")
     except subprocess.CalledProcessError:
         print("Permission Error: You don't have permissions to set the date and time!")
-
-
-if __name__ == '__main__':
-    main()
