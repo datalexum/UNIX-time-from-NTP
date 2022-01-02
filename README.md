@@ -6,6 +6,10 @@
 * **NTP-Server** can be **specified** using a **CLI-argument**
 * **Timezone** can be specified using a **CLI-argument**
 
+## Links
+* [GitHub](https://github.com/datalexum/UNIX-time-from-NTP)
+* [PyPI](https://pypi.org/project/UtfN/)
+
 # How it works
 
 1. UtfN requests the UTC time and date from the default or specified NTP-Server.
