@@ -14,8 +14,21 @@
 
 # Usage
 
-Execute the utfn.py from command line and add needed arguments.
+Execute the utfn from command line and add needed arguments.
 
+## Installation
+
+UtfN can be installt from pip (recommandet):
+
+```
+python3 -m pip install -U utfn
+```
+
+If you want to run the latest version of the code, you can install from git:
+
+```
+python3 -m pip install -U git+git://github.com/datalexum/UNIX-time-from-NTP.git
+```
 ## Arguments
 
 | Longform | Shortform |           Description          |      Optional      |    Default   |
@@ -36,7 +49,7 @@ There can be two different types of errors.
 In the below example utfn is executed with the default NTP-Server and an UTC-offset of 1 to match CET (UTC+1) for the local time in my country.
 
 ```
-python utfn.py -z 1
+utfn -z 1
 ```
 
 If everything works as expected the set time is outputed:
