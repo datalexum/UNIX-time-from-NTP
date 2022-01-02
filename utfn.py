@@ -39,10 +39,12 @@ def main():
 
         time_string = time_template.format(day=time_date.day, month=month, year=time_date.year, hour=time_date.hour, minute=time_date.minute, second=time_date.second)
         output = subprocess.check_output(['date', '-s', "{}".format(time_string)])
+
+        print("Time set to {}".format(time_string))
     except gaierror:
-        print("No internet connection or connection to NTP-Server not possible!")
+        print("Connection Error: No internet connection or connection to NTP-Server not possible!")
     except subprocess.CalledProcessError:
-        print("You don't have permissions to set the date and time!")
+        print("Permission Error: You don't have permissions to set the date and time!")
 
 
 if __name__ == '__main__':
